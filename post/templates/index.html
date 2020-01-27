@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>OLX</title>
+    <style>
+        body{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <h2>Hello {{user.username }}!</h2>
+        <a href="{% url 'account_logout' %}">logout</a>
+    {% else %}
+        <ul>
+            <li><a href="{% url 'account_login' %}">login</a></li>
+            <li><a href="{% url 'account_signup' %}">signup</a></li>
+        </ul>
+    {% endif %}
+</body>
+</html>
