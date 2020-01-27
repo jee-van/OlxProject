@@ -12,14 +12,16 @@
     </style>
 </head>
 <body>
+    <ul>
+        <li><a href="{% url 'admin:index' %}">admin</a></li>
+        <li><a href="{% url 'post-list' %}">api</a></li>
     {% if user.is_authenticated %}
         <h2>Hello {{user.username }}!</h2>
-        <a href="{% url 'account_logout' %}">logout</a>
+        <li><a href="{% url 'account_logout' %}">logout</a></li>
     {% else %}
-        <ul>
             <li><a href="{% url 'account_login' %}">login</a></li>
             <li><a href="{% url 'account_signup' %}">signup</a></li>
-        </ul>
+    </ul>
     {% endif %}
 </body>
 </html>

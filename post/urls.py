@@ -6,6 +6,5 @@ router = DefaultRouter()
 router.register('post', views.PostView)
 
 urlpatterns = [
-    path('', views.index.as_view(), name='home'),
-    path('api/', include(router.urls))
+    path('', include(router.urls))
 ]

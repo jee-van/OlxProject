@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
-def profile(request):
-    return render(request, 'profile.html')
+class index(TemplateView):
+    template_name = 'index.html'
